@@ -50,6 +50,7 @@
             this.dsPrincipal = new System.Data.DataSet();
             this.btnBuscarTabelas = new System.Windows.Forms.Button();
             this.dsColunas = new System.Data.DataSet();
+            this.btnGerarClasse = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridColunas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipal)).BeginInit();
@@ -240,9 +241,9 @@
             // 
             // btnBuscarTabelas
             // 
-            this.btnBuscarTabelas.Location = new System.Drawing.Point(40, 222);
+            this.btnBuscarTabelas.Location = new System.Drawing.Point(89, 204);
             this.btnBuscarTabelas.Name = "btnBuscarTabelas";
-            this.btnBuscarTabelas.Size = new System.Drawing.Size(222, 23);
+            this.btnBuscarTabelas.Size = new System.Drawing.Size(133, 23);
             this.btnBuscarTabelas.TabIndex = 1;
             this.btnBuscarTabelas.Text = "Buscar Tabelas";
             this.btnBuscarTabelas.UseVisualStyleBackColor = true;
@@ -252,11 +253,22 @@
             // 
             this.dsColunas.DataSetName = "NewDataSet";
             // 
+            // btnGerarClasse
+            // 
+            this.btnGerarClasse.Location = new System.Drawing.Point(316, 414);
+            this.btnGerarClasse.Name = "btnGerarClasse";
+            this.btnGerarClasse.Size = new System.Drawing.Size(704, 23);
+            this.btnGerarClasse.TabIndex = 15;
+            this.btnGerarClasse.Text = "Gerar Classe";
+            this.btnGerarClasse.UseVisualStyleBackColor = true;
+            this.btnGerarClasse.Click += new System.EventHandler(this.btnGerarClasse_Click);
+            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 420);
+            this.ClientSize = new System.Drawing.Size(1187, 508);
+            this.Controls.Add(this.btnGerarClasse);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBuscarTabelas);
             this.Controls.Add(this.lbStatus);
@@ -310,6 +322,7 @@
         private System.Windows.Forms.Label lbColunas;
         private System.Windows.Forms.Label lbTabelas;
         private System.Data.DataSet dsColunas;
+        private System.Windows.Forms.Button btnGerarClasse;
     }
 }
 
