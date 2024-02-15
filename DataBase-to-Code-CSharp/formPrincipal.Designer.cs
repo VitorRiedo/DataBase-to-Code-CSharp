@@ -42,6 +42,19 @@
             this.txtNomeBase = new System.Windows.Forms.TextBox();
             this.lbDescStatus = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbColunas = new System.Windows.Forms.Label();
+            this.lbTabelas = new System.Windows.Forms.Label();
+            this.dataGridColunas = new System.Windows.Forms.DataGridView();
+            this.dataGridPrincipal = new System.Windows.Forms.DataGridView();
+            this.dsPrincipal = new System.Data.DataSet();
+            this.btnBuscarTabelas = new System.Windows.Forms.Button();
+            this.dsColunas = new System.Data.DataSet();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridColunas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsColunas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConectar
@@ -120,6 +133,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(133, 20);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.Text = "developer";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // chkVisualizarPassword
@@ -169,11 +183,82 @@
             this.lbStatus.TabIndex = 13;
             this.lbStatus.Text = "Desconectado";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbColunas);
+            this.panel1.Controls.Add(this.lbTabelas);
+            this.panel1.Controls.Add(this.dataGridColunas);
+            this.panel1.Controls.Add(this.dataGridPrincipal);
+            this.panel1.Location = new System.Drawing.Point(313, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(707, 396);
+            this.panel1.TabIndex = 14;
+            // 
+            // lbColunas
+            // 
+            this.lbColunas.AutoSize = true;
+            this.lbColunas.Location = new System.Drawing.Point(474, 7);
+            this.lbColunas.Name = "lbColunas";
+            this.lbColunas.Size = new System.Drawing.Size(45, 13);
+            this.lbColunas.TabIndex = 4;
+            this.lbColunas.Text = "Colunas";
+            // 
+            // lbTabelas
+            // 
+            this.lbTabelas.AutoSize = true;
+            this.lbTabelas.Location = new System.Drawing.Point(119, 7);
+            this.lbTabelas.Name = "lbTabelas";
+            this.lbTabelas.Size = new System.Drawing.Size(45, 13);
+            this.lbTabelas.TabIndex = 3;
+            this.lbTabelas.Text = "Tabelas";
+            // 
+            // dataGridColunas
+            // 
+            this.dataGridColunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridColunas.Location = new System.Drawing.Point(304, 23);
+            this.dataGridColunas.Name = "dataGridColunas";
+            this.dataGridColunas.Size = new System.Drawing.Size(391, 370);
+            this.dataGridColunas.TabIndex = 2;
+            // 
+            // dataGridPrincipal
+            // 
+            this.dataGridPrincipal.AllowUserToAddRows = false;
+            this.dataGridPrincipal.AllowUserToDeleteRows = false;
+            this.dataGridPrincipal.AutoGenerateColumns = false;
+            this.dataGridPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPrincipal.DataSource = this.dsPrincipal;
+            this.dataGridPrincipal.Location = new System.Drawing.Point(3, 23);
+            this.dataGridPrincipal.Name = "dataGridPrincipal";
+            this.dataGridPrincipal.ReadOnly = true;
+            this.dataGridPrincipal.Size = new System.Drawing.Size(295, 370);
+            this.dataGridPrincipal.TabIndex = 0;
+            this.dataGridPrincipal.SelectionChanged += new System.EventHandler(this.dataGridPrincipal_SelectionChanged);
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "NewDataSet";
+            // 
+            // btnBuscarTabelas
+            // 
+            this.btnBuscarTabelas.Location = new System.Drawing.Point(40, 222);
+            this.btnBuscarTabelas.Name = "btnBuscarTabelas";
+            this.btnBuscarTabelas.Size = new System.Drawing.Size(222, 23);
+            this.btnBuscarTabelas.TabIndex = 1;
+            this.btnBuscarTabelas.Text = "Buscar Tabelas";
+            this.btnBuscarTabelas.UseVisualStyleBackColor = true;
+            this.btnBuscarTabelas.Click += new System.EventHandler(this.btnBuscarTabelas_Click);
+            // 
+            // dsColunas
+            // 
+            this.dsColunas.DataSetName = "NewDataSet";
+            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 209);
+            this.ClientSize = new System.Drawing.Size(1187, 420);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBuscarTabelas);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.lbDescStatus);
             this.Controls.Add(this.lbNomeBase);
@@ -190,6 +275,12 @@
             this.Controls.Add(this.btnConectar);
             this.Name = "formPrincipal";
             this.Text = "Configuração";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridColunas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsColunas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,6 +302,14 @@
         private System.Windows.Forms.TextBox txtNomeBase;
         private System.Windows.Forms.Label lbDescStatus;
         private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridPrincipal;
+        private System.Data.DataSet dsPrincipal;
+        private System.Windows.Forms.Button btnBuscarTabelas;
+        private System.Windows.Forms.DataGridView dataGridColunas;
+        private System.Windows.Forms.Label lbColunas;
+        private System.Windows.Forms.Label lbTabelas;
+        private System.Data.DataSet dsColunas;
     }
 }
 
